@@ -45,5 +45,6 @@ COPY . .
 # Expose the port that the application listens on.
 EXPOSE 8000
 
-# Run the application.
-CMD python manage.py runserver 0.0.0.0:8000
+# Run the application using Gunicorn.
+CMD gunicorn django_docker.wsgi:application --bind 127.0.0.1:8000
+
