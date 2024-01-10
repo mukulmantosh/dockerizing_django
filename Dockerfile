@@ -16,6 +16,7 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
 ARG UID=10001
@@ -27,6 +28,11 @@ RUN adduser \
     --no-create-home \
     --uid "${UID}" \
     appuser
+
+
+# Create Static Files Directory
+RUN mkdir /app/staticfiles && chown appuser:appuser /app/staticfiles
+
 
 # Install libpq (PostgreSQL client library)
 RUN apt-get update && apt-get install -y libpq-dev
