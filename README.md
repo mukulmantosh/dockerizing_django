@@ -17,3 +17,5 @@ Before you begin, ensure you have the following tools installed on your system:
 
    ```bash
    git clone https://github.com/mukulmantosh/dockerizing_django.git
+
+2. For production setup, checkout to `production` branch.
