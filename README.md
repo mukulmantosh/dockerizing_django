@@ -20,5 +20,6 @@ Before you begin, ensure you have the following tools installed on your system:
 
 2. For production setup, checkout to `production` branch.
 
+## Tutorial
 
 The entire tutorial (step by step) is available in JetBrains Guide [Boost your Development Speed with Docker and Django](https://www.jetbrains.com/guide/django/tutorials/django-docker/)
