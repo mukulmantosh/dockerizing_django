@@ -5,7 +5,7 @@
 # https://docs.docker.com/engine/reference/builder/
 
 ARG PYTHON_VERSION=3.11.6
-FROM python:${PYTHON_VERSION}-slim as base
+FROM python:${PYTHON_VERSION}-slim AS base
 
 # Prevents Python from writing pyc files.
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -35,7 +35,8 @@ RUN mkdir /app/staticfiles && chown appuser:appuser /app/staticfiles
 
 
 # Install libpq (PostgreSQL client library)
-RUN apt-get update && apt-get install -y libpq-dev
+RUN apt-get update && apt-get install -y build-essential libpq-dev
+
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
